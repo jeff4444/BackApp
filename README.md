@@ -9,5 +9,5 @@ Built Using the C programming language
 
 ## How to run this App
 * Clone this repo to your local device
-* Run the command '''./a.out''' on your terminal
+* Run the command `./a.out` on your terminal
 * Enjoy!
