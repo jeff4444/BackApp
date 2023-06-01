@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 
 	while (1)
 	{
-		printf("\nSelect Option, %s: \n[1] Recieve\n[2] Send\n[3] Show Balance \n[4] Show my recent trnsactions\n[5] Log out\n", myAccount->username);
+		printf("\nSelect Option, %s: \n[1] Recieve\n[2] Send\n[3] Show Balance \n[4] Show my recent transactions\n[5] Log out\n", myAccount->username);
 		n_chars = getline(&reply, &n, stdin);
 		if (n_chars == -1)
 			break;

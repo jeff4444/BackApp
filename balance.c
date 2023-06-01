@@ -5,5 +5,8 @@
  */
 void show_balance(struct Account *myAccount)
 {
-	printf("\nYour current account balance is $%lf\n", myAccount->balance);
+	printf("BALANCE\n");
+	puts("------------------------------------");
+	printf("USERNAME: %s\n", myAccount->username);
+	printf("Your current account balance is $%.2lf\n", myAccount->balance);
 }

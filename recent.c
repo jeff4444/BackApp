@@ -5,20 +5,23 @@
  */
 void recent(struct Account *myAccount)
 {
+	struct Send *sent = myAccount->sent;
+	struct Recieved *recieve = myAccount->recieve;
+
 	puts("TRANSACTIONS\n");
 	puts("SENT");
-	while (myAccount->sent)
+	while (sent)
 	{
-		printf("You sent $%lf to %s\n", myAccount->sent->amount, myAccount->sent->name);
-		myAccount->sent = myAccount->sent->next;
+		printf("You sent $%lf to %s\n", sent->amount, sent->name);
+		sent = sent->next;
 	}
 	puts("");
 
 	puts("RECIEVED");
-	while (myAccount->recieve)
+	while (recieve)
 	{
-		printf("You recieved $%lf from %s\n", myAccount->recieve->amount, myAccount->recieve->name);
-		myAccount->recieve = myAccount->recieve->next;
+		printf("You recieved $%lf from %s\n", recieve->amount, recieve->name);
+		recieve = recieve->next;
 	}
 
 	puts("\nEND");

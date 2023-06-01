@@ -27,7 +27,7 @@ void recieve_funds(struct Account **myAccount)
 		puts("You can not recieve $0");
 		return;
 	}
-	printf("Recieve $%lf from: ", money);
+	printf("Recieve $%.2lf from: ", money);
 	n = 0;
 	n_chars = getline(&name, &n, stdin);
 	if (n_chars == -1)
@@ -37,7 +37,12 @@ void recieve_funds(struct Account **myAccount)
 	}
 	(*myAccount)->balance += money;
 	add_recieve(money, name, &((*myAccount)->recieve));
-	printf("Successfully recieved $%lf from %s\n", money, name);
+	printf("Successfully recieved $%.2lf from %s\n", money, name);
+	puts("RECIEPT");
+	puts("----------------------------------------------------");
+	printf("Amount Recieved: $%.2lf\n", money);
+	printf("From: %s\n", name);
+	show_balance(*myAccount);
 }
 
 /**

@@ -27,7 +27,7 @@ void send_funds(struct Account **myAccount)
 		puts("You can not send $0");
 		return;
 	}
-	printf("Send $%lf to: ", money);
+	printf("Send $%.2lf to: ", money);
 	n = 0;
 	n_chars = getline(&name, &n, stdin);
 	if (n_chars == -1)
@@ -42,7 +42,12 @@ void send_funds(struct Account **myAccount)
 	}
 	(*myAccount)->balance -= money;
 	add_send(money, name, &((*myAccount)->sent));
-	printf("Successfully sent $%lf to %s\n", money, name);
+	printf("Successfully sent $%.2lf to %s\n", money, name);
+	puts("RECIEPT");
+	puts("--------------------------------------------------");
+	printf("Amount Sent: $%.2lf\n", money);
+	printf("Sent to: %s\n", name);
+	show_balance(*myAccount);
 }
 
 /**
