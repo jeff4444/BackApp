@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 /**
  * struct Recieved - recieve details
  * @name: Name of person recieved from
@@ -12,6 +13,7 @@ struct Recieved
 {
 	char *name;
 	double amount;
+	time_t t;
 	struct Recieved *next;
 };
 
@@ -24,6 +26,7 @@ struct Send
 {
 	char *name;
 	double amount;
+	time_t t;
 	struct Send *next;
 };
 struct Account

@@ -12,7 +12,7 @@ void recent(struct Account *myAccount)
 	puts("SENT");
 	while (sent)
 	{
-		printf("You sent $%lf to %s\n", sent->amount, sent->name);
+		printf("You sent $%lf to %s, on %s\n", sent->amount, sent->name, ctime(&(sent->t)));
 		sent = sent->next;
 	}
 	puts("");
@@ -20,7 +20,7 @@ void recent(struct Account *myAccount)
 	puts("RECIEVED");
 	while (recieve)
 	{
-		printf("You recieved $%lf from %s\n", recieve->amount, recieve->name);
+		printf("You recieved $%lf from %s, on %s\n", recieve->amount, recieve->name, ctime(&(recieve->t)));
 		recieve = recieve->next;
 	}
 

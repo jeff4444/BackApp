@@ -30,6 +30,7 @@ void recieve_funds(struct Account **myAccount)
 	printf("Recieve $%.2lf from: ", money);
 	n = 0;
 	n_chars = getline(&name, &n, stdin);
+	name[n_chars - 1] = '\0';
 	if (n_chars == -1)
 	{
 		puts("Incorrect input");
@@ -58,6 +59,7 @@ void add_recieve(double amount, char *name, struct Recieved **head)
 	newNode = malloc(sizeof(struct Recieved));
 	newNode->amount = amount;
 	newNode->name = name;
+	time(&(newNode->t));
 	newNode->next = *head;
 	*head = newNode;
 }

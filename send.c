@@ -30,6 +30,7 @@ void send_funds(struct Account **myAccount)
 	printf("Send $%.2lf to: ", money);
 	n = 0;
 	n_chars = getline(&name, &n, stdin);
+	name[n_chars - 1] = '\0';
 	if (n_chars == -1)
 	{
 		puts("Incorrect input");
@@ -82,6 +83,7 @@ void add_send(double amount, char *name, struct Send **head)
 	newNode = malloc(sizeof(struct Send));
 	newNode->amount = amount;
 	newNode->name = name;
+	time(&(newNode->t));
 	newNode->next = *head;
 	*head = newNode;
 }
