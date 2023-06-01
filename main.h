@@ -33,6 +33,8 @@ struct Account
 	struct Recieved *recieve;
 	struct Send *sent;
 };
+void recieve_funds(struct Account **myAccount);
+void add_recieve(double amount, char *name, struct Recieved **head);
 void recent(struct Account *myAccount);
 int strip(char *str);
 void show_balance(struct Account *myAccount);
